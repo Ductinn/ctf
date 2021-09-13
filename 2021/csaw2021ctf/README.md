@@ -125,7 +125,7 @@ the binary like this:
 we write it to a file then convert it to binary by `xxd -r`<br />
 When we pwned and got shell, there was a message on the server give
 us another address, port, password and there is another binary on that server. <br />
-there are 3 levels, the given binary changes when we up to next level, we 
+there are 3 levels, we need a different payload when we up to next level, we 
 need to pwn all them to get the flag.
 <br />
 ### file_4
