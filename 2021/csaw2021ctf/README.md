@@ -125,7 +125,7 @@ the binary like this:
 we write it to a file then convert it to binary by `xxd -r`<br />
 When we pwned and got shell, there was a message on the server give
 us another address, port, password and there is another binary on that server. <br />
-there are 3 levels, the binary change when we up to next level, we 
+there are 3 levels, the given binary changes when we up to next level, we 
 need to pwn all them to get the flag.
 <br />
 ### file_4
@@ -157,7 +157,7 @@ we still have fsb but there is no win function this time.
 <br />
 ![image](https://user-images.githubusercontent.com/87422359/133051357-b5211b7d-7eea-44a1-b9e1-7767891d97c8.png)
 <br />
-but there is a `/bin/sh` in the binary so i decide to dive into the binary
+but there is a `/bin/sh` in the binary so i decide to dig into the binary
 and i got this
 <br />
 ![image](https://user-images.githubusercontent.com/87422359/133052191-8987d866-8f9f-48fe-84b0-45d96c346765.png)
