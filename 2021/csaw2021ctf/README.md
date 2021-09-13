@@ -124,8 +124,8 @@ the binary like this:
 <br />
 we write it to a file then convert it to binary by `xxd -r`<br />
 When we pwned and got shell, there was a message on the server give
-us another address, port, password. <br />
-the binaries are changed 3 times(at port 16, 32, 46), we 
+us another address, port, password and there is another binary on that server. <br />
+there are 3 levels, the binary change when we up to next level, we 
 need to pwn all them to get the flag.
 <br />
 ### file_4
