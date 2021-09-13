@@ -7,6 +7,7 @@ Oh noes! I partied all weekend and now it's an hour before the CTF ends and I ha
 `nc auto-pwn.chal.csaw.io 11001` then enter the password, we get 
 the binary like this:
 ![given_binary](https://user-images.githubusercontent.com/87422359/133044852-ecc1638d-c82f-4e11-8d92-853e5ead68f6.png)
+<br />
 we write it to a file then convert it to binary by `xxd -r`<br />
 When we pwned and got shell, there was a message on the server give
 us another address, port, password. <br />
