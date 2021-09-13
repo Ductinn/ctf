@@ -10,6 +10,7 @@ Table of Contents
    * [Cold](#cold)
    * [word_games](#word_games)
 
+Sorry for my bad english !!
 ## Alien math
 ```
 Alien Math
