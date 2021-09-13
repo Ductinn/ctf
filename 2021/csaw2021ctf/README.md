@@ -11,7 +11,7 @@ the binary like this:
 we write it to a file then convert it to binary by `xxd -r`<br />
 When we pwned and got shell, there was a message on the server give
 us another address, port, password. <br />
-the binaries are changed a several times(at port 16, 32, ...), we 
+the binaries are changed 3 times(at port 16, 32, 46), we 
 need to pwn all them to get the flag. <br />
 <br />
 ### file_4
