@@ -5,7 +5,6 @@ Table of Contents
       * [file_4](#file_4)
       * [file_2](#file_2)
       * [file_1](#file_1)
-<br />
 ## procrastination-simulator
 ```
 procrastination-simulator
