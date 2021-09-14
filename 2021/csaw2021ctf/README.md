@@ -107,7 +107,6 @@ int main(int argc,char** argv) {
 }
 ```
 ```python
-seed = int(time())
 process = subprocess.Popen('./a.out', stdout=subprocess.PIPE)
 rd = process.stdout.readline().rstrip()
 r.sendline(rd)
