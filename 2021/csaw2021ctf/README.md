@@ -91,7 +91,7 @@ unsigned __int64 __fastcall sub_1273(__int64 a1)
   return v9 - __readfsqword(0x28u);
 }
 ```
-we will got flag if out input equal to the random number `v3`
+we will get flag if our input equal to the random number `v3`
 <br />
 payload:
 ```c
